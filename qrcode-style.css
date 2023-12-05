@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("./fonts/Outfit-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Outfit";
+    src: url("./fonts/Outfit-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Outfit";
+    src: url("./fonts/Outfit-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  
+  :root {
+  
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+    --white: #F2F5F9;
+    --bright-blue: #3662E3;
+    --dark-blue-1: #111729;
+    --dark-blue-2: #4e80ee33;
+    --grayish-blue: #364153;
+    --grayish-blue-2: #1d2334;
+    --black: #030617;
+  }
+  
+  body {
+    font-family: "Outfit", sans-serif;
+    margin: 0;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    min-width: 320px;
+    min-height: 100vh;
+  
+    background-color: var(--dark-blue-1);
+
+    background-image: url("/bg-illustration.svg");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+
+.qr-container {
+    border-radius: 50%;
+    background-color: var(--dark-blue-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 250px;
+    height: 250px;
+}
+
+#qrcode {
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 2rem;
+}
+
+.buttons button {
+    padding: .5rem 2rem;
+    background-color: var(--bright-blue);
+    border: none;
+    border-radius: .5rem;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- ... (your existing head content) -->
+        <script src="/qrcode.js"></script>
+        <script src="/qrcode.min.js"></script>
+        <link rel="stylesheet" href="/qrcode-style.css" />
+        <title>
+            QR Code
+        </title>
+    </head>
+    <body>
+        <main>
+            <div class="qr-container">
+                <div id="qrcode"></div>
+            </div>
+            <div class="buttons">
+                    <button class="download">Download</button>
+                    <button class="copy">
+                        Share
+                    </button>
+            </div>
+        </main>
+
+        <script>
+            const storedUrl = sessionStorage.getItem("url");
+
+            if (storedUrl) {
+                const downloadButton = document.querySelector(".download");
+                const copyButton = document.querySelector(".copy");
+
+
+                const qrCode = new QRCode("qrcode", {
+                    width: 150,
+                    height: 150,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H,
+                });
+
+                qrCode.makeCode(storedUrl);
+
+                downloadButton.addEventListener("click", () => {
+                    console.log(qrCode)
+                });
+
+                copyButton.addEventListener("click", () => {
+                    navigator.clipboard.writeText(storedUrl);
+                });
+
+            } else {
+                // Handle case where there's no URL stored
+                // Maybe display an error message or redirect back to the form page
+                
+                const mainElement = document.querySelector("main");
+
+                mainElement.innerHTML = `
+                    <h1>There's no URL stored</h1>
+                    <a href="/">Go back to the form</a>
+                `;
+            }
+        </script>
+    </body>
+</html>

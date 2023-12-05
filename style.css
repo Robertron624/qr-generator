@@ -55,6 +55,10 @@ body {
   background-color: var(--dark-blue-1);
 }
 
+button {
+  cursor: pointer;
+}
+
 button,
 input,
 textarea,
