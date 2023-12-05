@@ -110,6 +110,11 @@ form.url button[type="submit"] {
   padding: 0.5rem 1rem;
   width: 140px;
   margin-left: -9rem;
+  transition: filter 0.3s ease-in-out;
+}
+
+form.url button[type="submit"]:hover {
+  filter: brightness(1.2);
 }
 
 form.url input[type="text"] {
