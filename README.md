@@ -2,6 +2,10 @@
 
 This project is a QR Code generator application. It allows users to generate QR codes that can be scanned to redirect to specific URLs or display certain information.
 
+## Screenshots
+
+![Screenshot 1](./screenshot_1.PNG)
+
 ## Technologies Used
 
 - JavaScript: The main logic of the application is written in JavaScript, specifically in the files src/js/main.js and src/js/qrcode.js. The minified version of the 
@@ -33,7 +37,7 @@ If instead, you want to build the application, you can run the command `pnpm run
 ## Links
 
 - [Repository](https://github.com/Robertron624/qr-generator)
-- [Live Demo]()
+- [Live Demo](https://master--bespoke-kashata-3fe85b.netlify.app/)
 
 ## Author
 
