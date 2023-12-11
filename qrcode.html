@@ -62,46 +62,48 @@
         </main>
 
         <script>
-            const storedUrl = sessionStorage.getItem("url");
+            document.addEventListener("DOMContentLoaded", function () {
+                const storedUrl = sessionStorage.getItem("url");
 
-            if (storedUrl) {
-                const downloadButton = document.querySelector(".download");
-                const copyButton = document.querySelector(".copy");
+                if (storedUrl) {
+                    const downloadButton = document.querySelector(".download");
+                    const copyButton = document.querySelector(".copy");
 
-                const qrCode = new QRCode("qrcode", {
-                    width: 150,
-                    height: 150,
-                    colorDark: "#000000",
-                    colorLight: "#ffffff",
-                    correctLevel: QRCode.CorrectLevel.H,
-                });
+                    const qrCode = new QRCode("qrcode", {
+                        width: 150,
+                        height: 150,
+                        colorDark: "#000000",
+                        colorLight: "#ffffff",
+                        correctLevel: QRCode.CorrectLevel.H,
+                    });
 
-                qrCode.makeCode(storedUrl);
+                    qrCode.makeCode(storedUrl);
 
-                downloadButton.addEventListener("click", () => {
-                    const qrCodeCanvas =
-                        document.querySelector("#qrcode canvas");
+                    downloadButton.addEventListener("click", () => {
+                        const qrCodeCanvas =
+                            document.querySelector("#qrcode canvas");
 
-                    // Create a download link for the QR code image
-                    const downloadLink = document.createElement("a");
-                    downloadLink.href = qrCodeCanvas.toDataURL("image/png");
-                    downloadLink.download = "qrcode.png";
-                    downloadLink.click();
-                });
+                        // Create a download link for the QR code image
+                        const downloadLink = document.createElement("a");
+                        downloadLink.href = qrCodeCanvas.toDataURL("image/png");
+                        downloadLink.download = "qrcode.png";
+                        downloadLink.click();
+                    });
 
-                copyButton.addEventListener("click", () => {
-                    navigator.clipboard.writeText(storedUrl);
-                });
-            } else {
-                const mainElement = document.querySelector("main");
+                    copyButton.addEventListener("click", () => {
+                        navigator.clipboard.writeText(storedUrl);
+                    });
+                } else {
+                    const mainElement = document.querySelector("main");
 
-                mainElement.innerHTML = `
-                    <h1>There's no URL stored</h1>
-                    <a href="/">Go back to the form</a>
-                `;
-            }
+                    mainElement.innerHTML = `
+        <h1>There's no URL stored</h1>
+        <a href="/">Go back to the form</a>
+    `;
+                }
+            });
         </script>
-        <script src="./src/js/qrcode.js"></script>
-        <script src="./src/js/qrcode.min.js"></script>
+        <script src="/src/js/qrcode.js"></script>
+        <script src="/src/js/qrcode.min.js"></script>
     </body>
 </html>
