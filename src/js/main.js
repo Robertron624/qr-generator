@@ -13,6 +13,6 @@ formUrl.addEventListener("submit", (e) => {
     }
 
     sessionStorage.setItem("url", url);
-    return window.location.assign("/qrcode.html");
+    return window.location.assign("qrcode.html");
 
 });
